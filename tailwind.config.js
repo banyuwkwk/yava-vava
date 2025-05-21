@@ -9,11 +9,9 @@ module.exports = {
     extend: {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
-         anime: ['"Anime Ace"', 'sans-serif'],
+        anime: ['"Anime Ace"', 'Arial', 'sans-serif'], // fallback lebih aman
       },
     },
   },
-
-  
   plugins: [],
 }
