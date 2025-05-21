@@ -1,16 +1,56 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* Font import jika diperlukan */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
 
-/* Custom styles */
-@layer base {
-  html {
-    font-family: 'Poppins', sans-serif;
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
   }
 }
+
+/* Regular */
+@font-face {
+  font-family: 'WildWords';
+  src: url('/fonts/CCWildWordsLower-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Bold */
+@font-face {
+  font-family: 'WildWords';
+  src: url('/fonts/CCWildWordsLower-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Italic */
+@font-face {
+  font-family: 'WildWords';
+  src: url('/fonts/CCWildWordsLower-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Bold Italic */
+@font-face {
+  font-family: 'WildWords';
+  src: url('/fonts/CCWildWordsLower-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+}
+
 
 @font-face {
   font-family: 'WildWordsLower';
