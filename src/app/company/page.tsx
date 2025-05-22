@@ -5,7 +5,13 @@ import Image from "next/image";
 import Navbar from '@/components/Navbar';
 import { Download } from "lucide-react";
 import Breadcrumb from "../breadcrumb";
+import { Inter } from 'next/font/google';
 
+const inter = Inter({
+  subsets: ['latin'],     
+  weight: ['400', '700'], 
+  display: 'swap'        
+})
 
 const LontarSugarStats = () => {
   const [tons, setTons] = useState<number>(0);
@@ -84,18 +90,59 @@ const LontarSugarStats = () => {
 };
 
 const MissionSection: React.FC = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images = ["/images/pg1.png", "/images/pg2.png", "/images/pg3.png", "/images/pg4.png", "/images/pg5.png", "/images/pg6.png", "/images/pg7.png"];
+
+  const [anakKardiaImageIndex, setAnakKardiaImageIndex] = useState(0);
+  const anakKardiaImages = ["/images/an1.png", "/images/an2.png", "/images/an3.png", "/images/an4.png", "/images/an5.png", "/images/an6.png", "/images/an7.png"];
+
+  const [farmerImageIndex, setFarmerImageIndex] = useState(0);
+  const farmerImages = ["/images/f1.png", "/images/f2.png", "/images/f3.png", "/images/f4.png", "/images/f5.png", "/images/f6.png"];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 4000); // Ganti gambar setiap 4 detik
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAnakKardiaImageIndex((prevIndex) => (prevIndex + 1) % anakKardiaImages.length);
+    }, 3500); // Ganti gambar setiap 3.5 detik
+
+    return () => clearInterval(interval);
+  }, [anakKardiaImages.length]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFarmerImageIndex((prevIndex) => (prevIndex + 1) % farmerImages.length);
+    }, 3000); // Ganti gambar setiap 3 detik
+
+    return () => clearInterval(interval);
+  }, [farmerImages.length]);
+
   return (
     <>
       <Navbar />
       <section className="bg-[#FFF6E9] px-4 sm:px-12 lg:px-24 py-16">
         <div className="max-w-7xl mx-auto">
+           {/* Tambahkan Breadcrumb di sini */}
+            <Breadcrumb
+              paths={[
+                { label: "Home", href: "/" },
+                { label: "Company", href: "/company" },
+              ]}
+            />
+
           <div className="flex flex-col md:flex-row gap-10 items-center md:items-start">
             <div className="flex-1 max-w-xl order-2 md:order-1">
               <h1 className="text-4xl font-bold mb-4 font-wildwordslower">
-                <span className="text-[#5A2C21]">OUR </span>
-                <span className="text-orange-500">MISSION</span>
+                <span className="wildwords text-[#5A2C21]">OUR </span>
+                <span className="wildwords bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">MISSION</span>
               </h1>
-              <p className="text-base leading-relaxed mb-6 text-black font-poppins">
+              <p className="text-sm text-gray-700 mb-4">
                 YAVA fosters healthier villages in Eastern Indonesia by creating fair
                 markets and job opportunities for small farmers. Empowering women is key
                 to building village resilience. We take on this challenge with passion
@@ -107,27 +154,23 @@ const MissionSection: React.FC = () => {
               </button>
             </div>
 
-            <div className="flex-1 flex justify-center relative order-1 md:order-2">
-              <div className="relative transform rotate-3 border-4 border-white shadow-lg rounded-md overflow-hidden">
-                <Image
-                  src="/images/pg2.png"
-                  alt="Mission"
-                  width={500}
-                  height={350}
-                  className="w-full h-auto"
-                  priority
-                />
-              </div>
-              <div className="absolute -top-3 -right-3 w-6 h-6 rotate-45">
-                <div className="w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-b-[20px] border-b-red-600"></div>
-              </div>
+            <div className="flex-1 flex justify-center order-1 md:order-2">
+              <Image
+                key={images[currentImageIndex]}
+                src={images[currentImageIndex]}
+                alt="Mission"
+                width={360}
+                height={320}
+                className="transition-opacity duration-1000 ease-in-out"
+                priority
+              />
             </div>
           </div>
 
           <div className="mt-20">
             <h2 className="text-3xl font-bold text-center mb-4">
-              <span className="text-[#5A2C21]">OUR MISSION </span>
-              <span className="text-orange-500">IN NUMBERS</span>
+              <span className="wildwords text-[#5A2C21]">OUR MISSION </span>
+              <span className="wildwords bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">IN NUMBERS</span>
             </h2>
             <p className="text-center text-gray-600 text-sm mb-10">
               In 2023, at our production facilities in Desa Ban, Bali, and Oka, Flores:
@@ -140,21 +183,19 @@ const MissionSection: React.FC = () => {
             <div className="relative">
               <div className="transform rotate-2 shadow-lg border-4 border-white rounded-md overflow-hidden w-[300px] md:w-[360px]">
                 <Image
-                  src="/images/an1.png"
+                  key={anakKardiaImages[anakKardiaImageIndex]}
+                  src={anakKardiaImages[anakKardiaImageIndex]}
                   alt="AnakKardia Kids"
                   width={360}
                   height={320}
-                  className="w-full h-auto"
+                  className="w-full h-auto transition-opacity duration-1000 ease-in-out"
                 />
-              </div>
-              <div className="absolute -top-4 -left-4 w-8 h-8">
-                <div className="w-0 h-0 border-l-[16px] border-l-transparent border-r-[16px] border-r-transparent border-b-[24px] border-b-red-600 rotate-45"></div>
               </div>
             </div>
             <div className="max-w-xl">
               <h2 className="text-3xl font-bold mb-4">
-                <span className="text-[#5A2C21]">ANAKARDIA </span>
-                <span className="text-orange-500">KIDS</span>
+                <span className="wildwords text-[#5A2C21]">ANAKARDIA </span>
+                <span className="wildwords bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">KIDS</span>
               </h2>
               <p className="text-sm text-gray-700 mb-4">
                 AnakKardia Kids is located in our factory and hosts over 55 children daily.
@@ -173,8 +214,8 @@ const MissionSection: React.FC = () => {
           {/* Anakardia Highlight Section */}
           <div className="mt-24">
             <h2 className="text-3xl font-bold text-center mb-4">
-              <span className="text-[#5A2C21]">ANAKARDIA KIDS </span>
-              <span className="text-orange-500">HIGHLIGHT</span>
+              <span className="wildwords text-[#5A2C21]">ANAKARDIA KIDS </span>
+              <span className="wildwords bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">HIGHLIGHT</span>
             </h2>
             <div className="flex flex-col md:flex-row items-start gap-10 mt-10">
               <div className="w-full">
@@ -195,8 +236,8 @@ const MissionSection: React.FC = () => {
           <div className="flex flex-col md:flex-row items-center gap-12 mt-24">
             <div className="flex-1">
               <h2 className="text-4xl font-bold mb-4">
-                <span className="text-[#5A2C21]">FARMER </span>
-                <span className="text-orange-500">DEVELOPMENT</span>
+                <span className="wildwords text-[#5A2C21]">FARMER </span>
+               <span className="wildwords bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">DEVELOPMENT</span>
               </h2>
               <p className="text-gray-700 mb-4 leading-relaxed text-sm md:text-base">
                 YAVA is committed to farmers' livelihoods and responsible land use. Our
@@ -220,15 +261,13 @@ const MissionSection: React.FC = () => {
             <div className="flex-1 flex justify-center relative">
               <div className="relative transform rotate-3 border-4 border-white shadow-lg rounded-md overflow-hidden">
                 <Image
-                  src="/images/f1.png"
+                  key={farmerImages[farmerImageIndex]}
+                  src={farmerImages[farmerImageIndex]}
                   alt="Farmer Development"
                   width={500}
                   height={350}
-                  className="w-full h-auto"
+                  className="w-full h-auto transition-opacity duration-1000 ease-in-out"
                 />
-              </div>
-              <div className="absolute -top-3 -right-3 w-6 h-6 rotate-45">
-                <div className="w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-b-[20px] border-b-red-600"></div>
               </div>
             </div>
           </div>
@@ -236,8 +275,8 @@ const MissionSection: React.FC = () => {
           {/* Project Highlight */}
           <div className="mt-24">
             <h2 className="text-3xl font-bold text-center mb-4">
-              <span className="text-[#5A2C21]">PROJECT </span>
-              <span className="text-orange-500">HIGHLIGHT</span>
+              <span className="wildwords text-[#5A2C21]">PROJECT </span>
+              <span className="wildwords bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">HIGHLIGHT</span>
             </h2>
             <div className="bg-white p-4 rounded-lg shadow-md">
               <div className="rounded-lg overflow-hidden bg-white">
@@ -257,6 +296,6 @@ const MissionSection: React.FC = () => {
   );
 };
 
-
 export default function CompanyPage() {
+  return <MissionSection />;
 }

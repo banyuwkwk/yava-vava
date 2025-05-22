@@ -37,6 +37,11 @@
   font-style: normal;
 }
 
+
+.wildwords {
+  font-family: 'WildWordsLower', cursive, sans-serif;
+}
+
 /* Italic */
 @font-face {
   font-family: 'WildWords';
@@ -51,6 +56,8 @@
   src: url('/fonts/CCWildWordsLower-BoldItalic.woff2') format('woff2');
   font-weight: 700;
   font-style: italic;
+
+  
 }
 
 
