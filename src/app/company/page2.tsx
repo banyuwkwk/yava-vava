@@ -27,10 +27,10 @@ const MissionStats = () => {
       <div className="max-w-6xl mx-auto">
         {/* HEADER */}
         <div className="text-center mb-12">
-          <h2 className="wildwords text-3xl md:text-4xl font-bold mb-1 text-[#4B1A1B]">
+          <h2 className="text-3xl md:text-4xl font-bold mb-1 text-[#4B1A1B]">
             OUR MISSION
           </h2>
-          <h2 className="wildwords text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
             IN NUMBERS
           </h2>
           <p className="text-gray-600 text-sm">
@@ -43,8 +43,8 @@ const MissionStats = () => {
           {/* First Row - 3 columns */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-orange-600 mb-2">
-                {tons.toLocaleString()} <span className="text-3xl md:text-4xl font-bold text-orange-600">Tons</span>
+              <div className="text-2xl md:text-3xl font-bold text-orange-600 mb-2">
+                {tons.toLocaleString()} <span className="text-2xl md:text-3xl font-bold text-orange-600">Tons</span>
               </div>
               <div className="text-gray-600 text-sm leading-relaxed">
                 Total raw materials sourced from Eastern Indonesia.
@@ -52,8 +52,8 @@ const MissionStats = () => {
             </div>
 
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-orange-600 mb-2">
-                {employees} <span className="text-3xl md:text-4xl font-bold text-orange-600">Employees</span>
+              <div className="text-2xl md:text-3xl font-bold text-orange-600 mb-2">
+                {employees} <span className="text-2xl md:text-3xl font-bold text-orange-600">Employees</span>
               </div>
               <div className="text-gray-600 text-sm leading-relaxed">
                 The number of workers involved in our production process.
@@ -61,8 +61,8 @@ const MissionStats = () => {
             </div>
 
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-orange-600 mb-2">
-                {leadersPercent}% <span className="text-3xl md:text-4xl font-bold text-orange-600">Leaders</span>
+              <div className="text-2xl md:text-3xl font-bold text-orange-600 mb-2">
+                {leadersPercent}% <span className="text-2xl md:text-3xl font-bold text-orange-600">Leaders</span>
               </div>
               <div className="text-gray-600 text-sm leading-relaxed">
                 Percentage of female leaders in our workforce.
@@ -73,8 +73,8 @@ const MissionStats = () => {
           {/* Second Row - 2 columns centered */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 max-w-4xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-orange-600 mb-2">
-                {workersPercent}% <span className="text-3xl md:text-4xl font-bold text-orange-600">Workers</span>
+              <div className="text-2xl md:text-3xl font-bold text-orange-600 mb-2">
+                {workersPercent}% <span className="text-2xl md:text-3xl font-bold text-orange-600">Workers</span>
               </div>
               <div className="text-gray-600 text-sm leading-relaxed">
                 Percentage of female employees in our total workforce.
@@ -82,8 +82,8 @@ const MissionStats = () => {
             </div>
 
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-orange-600 mb-2">
-                {glycemicIndex} <span className="text-3xl md:text-4xl font-bold text-orange-600">Glycemic Index</span>
+              <div className="text-2xl md:text-3xl font-bold text-orange-600 mb-2">
+                {glycemicIndex} <span className="text-2xl md:text-3xl font-bold text-orange-600">Glycemic Index</span>
               </div>
               <div className="text-gray-600 text-sm leading-relaxed">
                 Replacing white sugar with low-GI palm sugar.
