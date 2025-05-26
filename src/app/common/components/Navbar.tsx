@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 
+
 const Navbar = () => {
   const [openDropdown, setOpenDropdown] = useState(false);
 
@@ -46,6 +47,7 @@ const Navbar = () => {
           <Link href="/company" className="hover:underline text-sm md:text-base">
             Company
           </Link>
+
           <Link href="#" className="hover:underline text-sm md:text-base">
             YAVAKataMereka
           </Link>
