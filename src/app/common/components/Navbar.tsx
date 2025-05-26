@@ -9,13 +9,13 @@ const Navbar = () => {
 
   return (
     <nav
-      className="bg-gradient-to-r from-orange-500 to-orange-400 text-white shadow-md flex items-center justify-between px-6"
+      className="bg-gradient-to-r bg-orange-500 text-white shadow-md flex items-center justify-between px-6"
       style={{ width: 'full', height: '85px' }}
     >
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="text-2xl font-bold tracking-wider">
-          YAVA
+          <img src="/heroimage/Logo - White (1).png" alt="YAVA" className="h-8 w-auto" />
         </Link>
 
         {/* Menu */}
@@ -43,7 +43,7 @@ const Navbar = () => {
           <Link href="#" className="hover:underline text-sm md:text-base">
             Ingredients
           </Link>
-          <Link href="#" className="hover:underline text-sm md:text-base">
+          <Link href="/company" className="hover:underline text-sm md:text-base">
             Company
           </Link>
           <Link href="#" className="hover:underline text-sm md:text-base">
