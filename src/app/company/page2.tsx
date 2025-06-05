@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const MissionStats = () => {
   const [tons, setTons] = useState(0);
@@ -22,29 +23,60 @@ const MissionStats = () => {
     animateValues();
   }, []);
 
+  // Variants untuk stagger animasi judul
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const textVariant = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut" } },
+  };
+
   return (
     <section className="bg-white px-4 sm:px-12 lg:px-24 py-16">
       <div className="max-w-6xl mx-auto">
         {/* HEADER */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-1 text-[#4B1A1B]">
-            OUR MISSION
-          </h2>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-            IN NUMBERS
-          </h2>
-          <p className="text-gray-600 text-sm">
-            In 2023, at our production facilities in Desa Ban, Bali, and Oka, Flores:
-          </p>
-        </div>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <motion.h1
+            className="text-3xl font-bold leading-tight"
+            variants={textVariant}
+          >
+            <div className="wildwords text-[#4B1A1B]">OUR MISSION</div>
+          </motion.h1>
 
-        {/* STATS GRID - Matching the 2-3-2 layout from the second image */}
+          <motion.div
+            className="text-3xl font-bold leading-tight wildwords inline-block bg-gradient-to-r from-[#FE8301] to-[#f31212] bg-clip-text text-transparent"
+            variants={textVariant}
+          >
+            IN NUMBERS
+          </motion.div>
+
+          <motion.p
+            className="text-gray-600 text-sm mt-4"
+            variants={textVariant}
+          >
+            In 2023, at our production facilities in Desa Ban, Bali, and Oka, Flores:
+          </motion.p>
+        </motion.div>
+
+        {/* STATS */}
         <div className="space-y-8">
-          {/* First Row - 3 columns */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             <div className="text-center">
               <div className="text-2xl md:text-3xl font-bold text-orange-600 mb-2">
-                {tons.toLocaleString()} <span className="text-2xl md:text-3xl font-bold text-orange-600">Tons</span>
+                {tons.toLocaleString()} <span className="text-orange-600">Tons</span>
               </div>
               <div className="text-gray-600 text-sm leading-relaxed">
                 Total raw materials sourced from Eastern Indonesia.
@@ -53,7 +85,7 @@ const MissionStats = () => {
 
             <div className="text-center">
               <div className="text-2xl md:text-3xl font-bold text-orange-600 mb-2">
-                {employees} <span className="text-2xl md:text-3xl font-bold text-orange-600">Employees</span>
+                {employees} <span className="text-orange-600">Employees</span>
               </div>
               <div className="text-gray-600 text-sm leading-relaxed">
                 The number of workers involved in our production process.
@@ -62,7 +94,7 @@ const MissionStats = () => {
 
             <div className="text-center">
               <div className="text-2xl md:text-3xl font-bold text-orange-600 mb-2">
-                {leadersPercent}% <span className="text-2xl md:text-3xl font-bold text-orange-600">Leaders</span>
+                {leadersPercent}% <span className="text-orange-600">Leaders</span>
               </div>
               <div className="text-gray-600 text-sm leading-relaxed">
                 Percentage of female leaders in our workforce.
@@ -70,11 +102,11 @@ const MissionStats = () => {
             </div>
           </div>
 
-          {/* Second Row - 2 columns centered */}
+          {/* Second Row - 2 Columns */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 max-w-4xl mx-auto">
             <div className="text-center">
               <div className="text-2xl md:text-3xl font-bold text-orange-600 mb-2">
-                {workersPercent}% <span className="text-2xl md:text-3xl font-bold text-orange-600">Workers</span>
+                {workersPercent}% <span className="text-orange-600">Workers</span>
               </div>
               <div className="text-gray-600 text-sm leading-relaxed">
                 Percentage of female employees in our total workforce.
@@ -83,7 +115,7 @@ const MissionStats = () => {
 
             <div className="text-center">
               <div className="text-2xl md:text-3xl font-bold text-orange-600 mb-2">
-                {glycemicIndex} <span className="text-2xl md:text-3xl font-bold text-orange-600">Glycemic Index</span>
+                {glycemicIndex} <span className="text-orange-600">Glycemic Index</span>
               </div>
               <div className="text-gray-600 text-sm leading-relaxed">
                 Replacing white sugar with low-GI palm sugar.

@@ -1,6 +1,6 @@
 'use client';
 
-import Navbar from "@/components/Navbar";
+
 import HomeSect from "./page1";
 import Page2Sect from "./page2";
 import Page3Sect from "./page3";
@@ -12,7 +12,6 @@ import Page6Sect from "./page6";
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <Navbar />
       <HomeSect />
       <Page2Sect />
       <Page3Sect />

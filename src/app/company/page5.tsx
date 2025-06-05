@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Inter } from "next/font/google";
+import { motion } from "framer-motion";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,29 +30,48 @@ const FarmerDevelopmentSection = () => {
 
   return (
     <div className={inter.className}>
-      <section className="bg-[#FFF6E9] px-4 sm:px-12 lg:px-24 py-16">
+      <section className="bg-[#FDF5E6] px-4 sm:px-8 lg:px-24 py-16">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center gap-12 mt-24">
-            {/* Teks */}
-            <div className="flex-1">
-              <div className="mb-4">
-                <h2 className="text-4xl font-bold wildwords text-[#4B1A1B]">
+          <div className="flex flex-col-reverse md:flex-row items-center gap-10 md:gap-6 mt-12 md:mt-24">
+
+            {/* TEKS */}
+            <motion.div
+              className="flex-1 text-center md:text-left md:pr-2"
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h1 className="text-2xl md:text-3xl font-bold leading-tight mb-4">
+                <motion.div
+                  className="wildwords text-[#4B1A1B]"
+                  initial={{ x: -50, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                >
                   FARMER
-                </h2>
-                <h2 className="text-4xl font-bold wildwords bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+                </motion.div>
+                <motion.div
+                  className="wildwords inline-block bg-gradient-to-r from-[#FE8301] to-[#f31212] bg-clip-text text-transparent"
+                  initial={{ y: 40, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.15 }}
+                >
                   DEVELOPMENT
-                </h2>
-              </div>
-              <p className="text-gray-700 mb-4 leading-relaxed text-sm md:text-base">
+                </motion.div>
+              </h1>
+
+              <p className="text-sm text-gray-700 mb-4 leading-relaxed">
                 YAVA is committed to farmers' livelihoods and responsible land use. Our
                 initiatives include training in sustainable farming techniques,
                 establishing Village Drying Centers, and improving cashew trees through
                 seedling distribution programs.
               </p>
-              <p className="text-gray-700 mb-4 text-sm md:text-base">
+
+              <p className="text-sm text-gray-700 mb-4 leading-relaxed">
                 We partner with local farmers for the long term in two ways:
               </p>
-              <ol className="list-decimal pl-5 text-sm md:text-base text-gray-700 space-y-2">
+
+              <ol className="list-decimal pl-5 text-sm text-gray-700 space-y-2 text-left md:text-left">
                 <li>
                   Providing essential knowledge on sustainable practices like mulching,
                   pruning, and using locally available fertilizers.
@@ -60,33 +80,39 @@ const FarmerDevelopmentSection = () => {
                   Collaborating to enhance or create new economic opportunities for crops.
                 </li>
               </ol>
-            </div>
+            </motion.div>
 
-            {/* Gambar + Tanda Petik */}
-            <div className="flex-1 flex justify-center">
-              <div className="relative w-[360px] h-[320px] rounded-md">
-                {/* Gambar Petani */}
-                <div className="relative w-full h-full rounded-md shadow-lg overflow-visible">
+            {/* GAMBAR */}
+            <motion.div
+              className="flex-1 flex justify-center"
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="relative w-[280px] md:w-[360px] h-[240px] md:h-[320px] rounded-md shadow-lg bg-white flex items-center justify-center">
+                <Image
+                  src={farmerImages[farmerImageIndex]}
+                  alt="Farmer Development"
+                  width={360}
+                  height={320}
+                  className="rounded-md object-contain transition duration-500 ease-in-out"
+                />
+                <motion.div
+                  className="absolute top-[-40px] right-[-30px] md:top-[-50px] md:right-[-40px] z-20"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 0.5, delay: 0.1, type: "spring", stiffness: 120 }}
+                >
                   <Image
-                    src={farmerImages[farmerImageIndex]}
-                    alt="Farmer Development"
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-md"
+                    src="/images/quote2.png"
+                    alt="Quote"
+                    width={80}
+                    height={80}
+                    className="rotate-12 drop-shadow-xl"
                   />
-                  {/* Tanda Petik di Atas Gambar */}
-                  <div className="absolute top-[-50px] right-[-40px] z-20">
-                    <Image
-                      src="/images/quote2.png"
-                      alt="Quote"
-                      width={90}
-                      height={90}
-                      className="rotate-12 drop-shadow-xl"
-                    />
-                  </div>
-                </div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>
