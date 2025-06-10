@@ -57,13 +57,13 @@ const Highlight = () => {
   const getTransitionDuration = () => 0.5;
 
   return (
-    <section className="bg-[#FFF9F2] py-16 px-4 sm:px-12 lg:px-24 font-sans" id="highlight">
+    <section className="bg-[#FFFFFF] py-16 px-4 sm:px-12 lg:px-24 font-sans" id="highlight">
       <div className="text-center mx-auto mb-8">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="text-3xl font-bold leading-tight wildwords text-[#4B1A1B]"
+          className="text-4xl 2x1:text-5x1 font-bold leading-tight wildwords text-[#4B1A1B]"
         >
           PROJECT
         </motion.div>
@@ -71,7 +71,7 @@ const Highlight = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
-          className="text-3xl font-bold leading-tight wildwords inline-block bg-gradient-to-r from-[#FE8301] to-[#f31212] bg-clip-text text-transparent"
+          className="text-4xl 2x1:text-5x1 font-bold leading-tight wildwords inline-block bg-gradient-to-r from-[#FE8301] to-[#f31212] bg-clip-text text-transparent"
         >
           HIGHLIGHT
         </motion.div>

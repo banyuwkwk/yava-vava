@@ -63,7 +63,7 @@ const Highlight = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="text-3xl font-bold leading-tight wildwords text-[#4B1A1B]"
+          className="text-4xl 2x1:text-5x1 font-bold leading-tight wildwords text-[#4B1A1B]"
         >
           ANAKARDIA
         </motion.div>
@@ -71,7 +71,7 @@ const Highlight = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
-          className="text-3xl font-bold leading-tight wildwords inline-block bg-gradient-to-r from-[#FE8301] to-[#f31212] to-red-500 bg-clip-text text-transparent"
+          className="text-4xl 2x1:text-5x1 font-bold leading-tight wildwords inline-block bg-gradient-to-r from-[#FE8301] to-[#f31212] to-red-500 bg-clip-text text-transparent"
         >
           HIGHLIGHT
         </motion.div>

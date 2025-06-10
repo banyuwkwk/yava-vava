@@ -23,7 +23,6 @@ const MissionStats = () => {
     animateValues();
   }, []);
 
-  // Variants untuk stagger animasi judul
   const containerVariants = {
     hidden: {},
     visible: {
@@ -39,32 +38,32 @@ const MissionStats = () => {
   };
 
   return (
-    <section className="bg-white px-4 sm:px-12 lg:px-24 py-16">
-      <div className="max-w-6xl mx-auto">
+    <section className="bg-white px-0 py-20">
+      <div className="max-w-4xl mx-auto">
         {/* HEADER */}
         <motion.div
           initial="hidden"
           animate="visible"
           variants={containerVariants}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-6"
         >
           <motion.h1
-            className="text-3xl font-bold leading-tight"
+            className="text-4xl 2x1:text-5x1 font-bold leading-tight"
             variants={textVariant}
           >
             <div className="wildwords text-[#4B1A1B]">OUR MISSION</div>
           </motion.h1>
 
           <motion.div
-            className="text-3xl font-bold leading-tight wildwords inline-block bg-gradient-to-r from-[#FE8301] to-[#f31212] bg-clip-text text-transparent"
+            className="text-4xl 2x1:text-5x1 font-bold leading-tight wildwords inline-block bg-gradient-to-r from-[#FE8301] to-[#f31212] bg-clip-text text-transparent"
             variants={textVariant}
           >
             IN NUMBERS
           </motion.div>
 
           <motion.p
-            className="text-gray-600 text-sm mt-4"
+            className="text-gray-600 text-sm mt-2"
             variants={textVariant}
           >
             In 2023, at our production facilities in Desa Ban, Bali, and Oka, Flores:
@@ -73,52 +72,58 @@ const MissionStats = () => {
 
         {/* STATS */}
         <div className="space-y-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-orange-600 mb-2">
-                {tons.toLocaleString()} <span className="text-orange-600">Tons</span>
+          {/* First Row - 3 Columns */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-0 gap-y-6 text-center">
+            <div className="py-2">
+              <div className="text-2xl md:text-3xl font-bold text-[#FE8301] mb-1">
+                {tons.toLocaleString()} <span className="text-[#FE8301]">Tons</span>
               </div>
               <div className="text-gray-600 text-sm leading-relaxed">
-                Total raw materials sourced from Eastern Indonesia.
+                <div>Total raw materials sourced from</div>
+                <div>Eastern Indonesia.</div>
               </div>
             </div>
 
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-orange-600 mb-2">
-                {employees} <span className="text-orange-600">Employees</span>
+            <div className="py-2">
+              <div className="text-2xl md:text-3xl font-bold text-[#FE8301] mb-1">
+                {employees} <span className="text-[#FE8301]">Employees</span>
               </div>
               <div className="text-gray-600 text-sm leading-relaxed">
-                The number of workers involved in our production process.
+                <div>The number of workers involved in our</div>
+                <div>production process.</div>
               </div>
             </div>
 
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-orange-600 mb-2">
-                {leadersPercent}% <span className="text-orange-600">Leaders</span>
+            <div className="py-2">
+              <div className="text-2xl md:text-3xl font-bold text-[#FE8301] mb-1">
+                {leadersPercent}% <span className="text-[#FE8301]">Leaders</span>
               </div>
               <div className="text-gray-600 text-sm leading-relaxed">
-                Percentage of female leaders in our workforce.
+                <div>Percentage of female leaders</div>
+                <div>in our workforce.</div>
               </div>
             </div>
           </div>
 
           {/* Second Row - 2 Columns */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 max-w-4xl mx-auto">
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-orange-600 mb-2">
-                {workersPercent}% <span className="text-orange-600">Workers</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-0 gap-y-6 text-center max-w-2xl mx-auto">
+            <div className="py-2">
+              <div className="text-2xl md:text-3xl font-bold text-[#FE8301] mb-1">
+                {workersPercent}% <span className="text-[#FE8301]">Workers</span>
               </div>
               <div className="text-gray-600 text-sm leading-relaxed">
-                Percentage of female employees in our total workforce.
+                <div>Percentage of female employees in</div>
+                <div>our total workforce.</div>
               </div>
             </div>
 
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-orange-600 mb-2">
-                {glycemicIndex} <span className="text-orange-600">Glycemic Index</span>
+            <div className="py-2">
+              <div className="text-2xl md:text-3xl font-bold text-[#FE8301] mb-1">
+                {glycemicIndex} <span className="text-[#FE8301]">Glycemic Index</span>
               </div>
               <div className="text-gray-600 text-sm leading-relaxed">
-                Replacing white sugar with low-GI palm sugar.
+                <div>Replacing white sugar with low-GI</div>
+                <div>palm sugar.</div>
               </div>
             </div>
           </div>

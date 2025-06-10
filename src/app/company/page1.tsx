@@ -34,25 +34,25 @@ const MissionSection = () => {
     <div className="font-sans">
       <section className="bg-[#FFF6E9] px-4 sm:px-12 lg:px-24 py-16 2xl:min-h-[810px] flex items-center">
         <div className="max-w-7xl mx-auto w-full">
-          {/* Breadcrumb */}
+          {/* Breadcrumb
           <nav className="mb-8">
             <div className="flex items-center space-x-2 text-sm text-gray-600">
               <a href="/" className="hover:text-orange-500 transition-colors">Home</a>
               <span>/</span>
               <span className="text-gray-400">Company</span>
             </div>
-          </nav>
+          </nav> */}
 
           {/* Mission Content */}
           <div className="py-12 px-6 md:px-12 rounded-lg">
             <motion.div
-              className="flex flex-col md:flex-row gap-10 items-center md:items-start"
+              className="grid grid-cols-1 md:grid-cols-2 items-center justify-items-center gap-10"
               initial="hidden"
               animate="visible"
               variants={containerVariants}
             >
               {/* Text Side */}
-              <motion.div className="flex-1 max-w-xl order-2 md:order-1" variants={containerVariants}>
+              <motion.div className="flex-1 max-w-xl order-2 md:order-1 text-left" variants={containerVariants}>
                 <div className="text-4xl 2xl:text-5xl font-bold mb-6 flex gap-2 items-center">
                   <motion.span
                     className="wildwords text-[#4B1A1B]"
@@ -75,7 +75,7 @@ const MissionSection = () => {
                 </div>
 
                 <motion.p
-                  className="text-sm 2xl:text-base text-gray-700 mb-6 leading-relaxed"
+                  className="text-sm text-gray-700 mb-6 leading-relaxed"
                   variants={{
                     hidden: { x: -100, opacity: 0 },
                     visible: { x: 0, opacity: 1, transition: { duration: 0.5, delay: 0.1 } },
@@ -107,16 +107,19 @@ const MissionSection = () => {
                   visible: { x: 0, opacity: 1, transition: { duration: 0.5, delay: 0.1 } },
                 }}
               >
-                <div className="relative w-[320px] h-[320px] md:w-[360px] md:h-[360px] 2xl:w-[460px] 2xl:h-[460px] rounded-xl shadow-lg bg-white">
+                <div className="relative w-[380px] h-[380px] md:w-[440px] md:h-[440px] 2xl:w-[520px] 2xl:h-[520px]">
                   {/* Quote mark */}
-                  <motion.img
-                    src="/images/quote2.png"
-                    alt="Quote Mark"
-                    initial={{ scale: 0, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.1, type: "spring", stiffness: 120 }}
-                    className="absolute top-[-30px] right-[-30px] w-20 h-20 md:w-24 md:h-24 transform rotate-12 drop-shadow-lg z-20"
-                  />
+                 <motion.img
+                  src="/images/quote2.png"
+                  alt="Quote Mark"
+                  width={150}
+                  height={150}
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.1, type: "spring", stiffness: 120 }}
+                  className="absolute top-[-50px] right-[-30px] w-[150px] h-[150px] transform rotate-12 z-20"
+                />
+
 
                   {/* Rotating Image */}
                   <img

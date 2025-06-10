@@ -30,90 +30,121 @@ const FarmerDevelopmentSection = () => {
 
   return (
     <div className={inter.className}>
-      <section className="bg-[#FDF5E6] px-4 sm:px-8 lg:px-24 py-16">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col-reverse md:flex-row items-center gap-10 md:gap-6 mt-12 md:mt-24">
-
-            {/* TEKS */}
+      <section className="bg-[#FFF6E9] px-4 sm:px-12 lg:px-24 py-16 2xl:min-h-[810px] flex items-center">
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="py-12 px-6 md:px-12 rounded-lg">
             <motion.div
-              className="flex-1 text-center md:text-left md:pr-2"
-              initial={{ x: -100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5 }}
+              className="grid grid-cols-1 md:grid-cols-2 items-center justify-items-center gap-10"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {},
+                visible: { transition: { staggerChildren: 0.05 } },
+              }}
             >
-              <h1 className="text-2xl md:text-3xl font-bold leading-tight mb-4">
-                <motion.div
-                  className="wildwords text-[#4B1A1B]"
-                  initial={{ x: -50, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.5 }}
+              {/* Text Side */}
+              <motion.div
+                className="flex-1 max-w-xl order-2 md:order-1 text-left"
+                variants={{
+                  hidden: { x: -100, opacity: 0 },
+                  visible: { x: 0, opacity: 1, transition: { duration: 0.5, delay: 0.1 } },
+                }}
+              >
+                <div className="mb-6">
+                  <motion.div
+                    className="text-4xl 2xl:text-5xl font-bold wildwords text-[#4B1A1B]"
+                    variants={{
+                      hidden: { x: -100, opacity: 0 },
+                      visible: { x: 0, opacity: 1, transition: { duration: 0.5, delay: 0.1 } },
+                    }}
+                  >
+                    FARMER
+                  </motion.div>
+                  <motion.div
+                    className="text-4xl 2xl:text-5xl font-bold wildwords inline-block bg-gradient-to-r from-[#FE8301] to-[#f31212] bg-clip-text text-transparent"
+                    variants={{
+                      hidden: { y: 100, opacity: 0 },
+                      visible: { y: 0, opacity: 1, transition: { duration: 0.5, delay: 0.15 } },
+                    }}
+                  >
+                    DEVELOPMENT
+                  </motion.div>
+                </div>
+
+                <motion.p
+                  className="text-sm text-gray-700 mb-6 leading-relaxed"
+                  variants={{
+                    hidden: { x: -100, opacity: 0 },
+                    visible: { x: 0, opacity: 1, transition: { duration: 0.5, delay: 0.2 } },
+                  }}
                 >
-                  FARMER
-                </motion.div>
-                <motion.div
-                  className="wildwords inline-block bg-gradient-to-r from-[#FE8301] to-[#f31212] bg-clip-text text-transparent"
-                  initial={{ y: 40, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.15 }}
+                  YAVA is committed to farmers' livelihoods and responsible land use. Our
+                  initiatives include training in sustainable farming techniques,
+                  establishing Village Drying Centers, and improving cashew trees through
+                  seedling distribution programs.
+                </motion.p>
+
+                <motion.p
+                  className="text-sm text-gray-700 mb-6 leading-relaxed"
+                  variants={{
+                    hidden: { x: -100, opacity: 0 },
+                    visible: { x: 0, opacity: 1, transition: { duration: 0.5, delay: 0.25 } },
+                  }}
                 >
-                  DEVELOPMENT
-                </motion.div>
-              </h1>
+                  We partner with local farmers for the long term in two ways:
+                </motion.p>
 
-              <p className="text-sm text-gray-700 mb-4 leading-relaxed">
-                YAVA is committed to farmers' livelihoods and responsible land use. Our
-                initiatives include training in sustainable farming techniques,
-                establishing Village Drying Centers, and improving cashew trees through
-                seedling distribution programs.
-              </p>
-
-              <p className="text-sm text-gray-700 mb-4 leading-relaxed">
-                We partner with local farmers for the long term in two ways:
-              </p>
-
-              <ol className="list-decimal pl-5 text-sm text-gray-700 space-y-2 text-left md:text-left">
-                <li>
-                  Providing essential knowledge on sustainable practices like mulching,
-                  pruning, and using locally available fertilizers.
-                </li>
-                <li>
-                  Collaborating to enhance or create new economic opportunities for crops.
-                </li>
-              </ol>
-            </motion.div>
-
-            {/* GAMBAR */}
-            <motion.div
-              className="flex-1 flex justify-center"
-              initial={{ x: 100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="relative w-[280px] md:w-[360px] h-[240px] md:h-[320px] rounded-md shadow-lg bg-white flex items-center justify-center">
-                <Image
-                  src={farmerImages[farmerImageIndex]}
-                  alt="Farmer Development"
-                  width={360}
-                  height={320}
-                  className="rounded-md object-contain transition duration-500 ease-in-out"
-                />
-                <motion.div
-                  className="absolute top-[-40px] right-[-30px] md:top-[-50px] md:right-[-40px] z-20"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.1, type: "spring", stiffness: 120 }}
+                <motion.ol
+                  className="list-decimal pl-5 text-sm text-gray-700 mb-6 leading-relaxed text-left"
+                  variants={{
+                    hidden: { x: -100, opacity: 0 },
+                    visible: { x: 0, opacity: 1, transition: { duration: 0.5, delay: 0.3 } },
+                  }}
                 >
+                  <li>
+                    Providing essential knowledge on sustainable practices like mulching,
+                    pruning, and using locally available fertilizers.
+                  </li>
+                  <li>
+                    Collaborating to enhance or create new economic opportunities for crops.
+                  </li>
+                </motion.ol>
+              </motion.div>
+
+              {/* Image Side */}
+              <motion.div
+                className="flex-1 flex justify-center order-1 md:order-2 relative"
+                variants={{
+                  hidden: { x: 100, opacity: 0 },
+                  visible: { x: 0, opacity: 1, transition: { duration: 0.5, delay: 0.1 } },
+                }}
+              >
+                <div className="relative w-[440px] h-[440px] 2xl:w-[520px] 2xl:h-[520px] rounded-xl flex items-center justify-center overflow-visible">
                   <Image
-                    src="/images/quote2.png"
-                    alt="Quote"
-                    width={80}
-                    height={80}
-                    className="rotate-12 drop-shadow-xl"
+                    src={farmerImages[farmerImageIndex]}
+                    alt="Farmer Development"
+                    width={520}
+                    height={520}
+                    className="rounded-xl object-contain"
+                    priority
                   />
-                </motion.div>
-              </div>
+                  <motion.div
+                    className="absolute top-[-45px] right-[-30px] w-[150px] h-[150px] z-20"
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.1, type: "spring", stiffness: 120 }}
+                  >
+                    <Image
+                      src="/images/quote2.png"
+                      alt="Quote"
+                      width={150}
+                      height={150}
+                      className="rotate-12 drop-shadow-lg"
+                    />
+                  </motion.div>
+                </div>
+              </motion.div>
             </motion.div>
-
           </div>
         </div>
       </section>
